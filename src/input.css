@@ -1,0 +1,65 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.select-box {
+    appearance: none;
+    background-image: url("../img/caret-up-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+
+}
+
+.check-box {
+    @apply appearance-none w-[35px] h-[20px] border border-zinc-600 rounded-full relative duration-300;
+
+    &::before{
+        content: "";
+        @apply w-[15px] h-[15px] bg-white absolute rounded-full top-[1.5px] left-[1px] duration-300;
+    }
+
+    &:checked {
+        @apply bg-zinc-600 ;
+
+        &::before{
+            content: "";
+            translate: 15px;
+        }
+    }
+}
+
+.radio {
+    user-select: none;
+    @apply appearance-none w-[20px] h-[20px] border border-zinc-800 rounded-full bg-zinc-600 relative border border-zinc-500;
+    
+    &::before {
+        content: "";
+        @apply w-[10px] h-[10px] bg-zinc-600 absolute rounded-full left-1 top-1;
+    }
+    &:checked {
+        @apply bg-zinc-600;
+
+        &::before{
+            content: "";
+            @apply bg-white;
+        }
+    }
+}
+
+.check_box {
+    user-select: none;
+    @apply appearance-none w-[17px] h-[17px] border border-zinc-600 rounded-md ;
+    
+    &:checked {
+        background-image: url("../img/check-solid.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        fill: white;
+
+        @apply bg-zinc-700 ;
+    }
+}
